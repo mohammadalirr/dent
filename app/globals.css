@@ -2,7 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.display-none {
+  display: none;
+  opacity: 0;
+}
+
+.item {
+  animation: opacity 0.5s linear forwards !important;
+}
+.leaveItem {
+  animation: reopacity 0.5s linear forwards !important;
+}
+.blurTrans {
+  animation: blur 0.3s linear forwards !important;
+}
+.noneBlur {
+  animation: resetBlur 0.2s linear forwards !important;
+
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  50% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes reopacity {
+  0% {
+    justify-content: flex-start;
+    width: 100%;
+    height: 25;
+  }
+  100% {
+    justify-content: center;
+    width: 25;
+    height: 25;
+  }
+}
+@keyframes blur {
+  0% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(6px);
+  }
+}
+@keyframes resetBlur {
+  0% {
+    filter: blur(6px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+
+.animate {
+  transition: width 0.3s ease-in-out !important;
+}
+.leave {
+  transition: width 0.3s ease-in-out !important;
+}
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,4 +99,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
