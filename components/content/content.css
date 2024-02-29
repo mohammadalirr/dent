@@ -1,0 +1,30 @@
+.box-1 {
+    background-image: url("https://ae01.alicdn.com/kf/Sdb1773fa1cda46a2a85c4f4ce0057efak.jpg_640x640Q90.jpg_.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.box-2 {
+    background-image: url("https://azdentall.com/cdn/shop/files/b8_743a4c80-364e-490b-9e2b-bc6a4e71dfae.jpg?v=1704181826&width=750");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.box-3 {
+    background-image: url("https://static4.depositphotos.com/1019287/334/i/450/depositphotos_3341702-stock-photo-dental-tools.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.box-4 {
+    background-image: url("../../public/kisspng-ball-bearing-automotive-brake-part-car-product-searching-for-unbrako-now-purchase-buy-anything-5badd94d527883.2951325115381200133378.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box-5 {
+    background-image: url("../../public/kisspng-ball-bearing-skf-rolling-element-bearing-nsk-spherical-roller-bearing-5b1c48c1566ff6.7801185015285802893541.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

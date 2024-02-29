@@ -4,23 +4,52 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+@font-face {
+  font-family: Yekan;
+  src: url("../public/fonts/Yekan-Bakh-FaNum/OTF/YekanBakhFaNum-Regular.otf");
+  src: url("../public/fonts/Yekan-Bakh-FaNum/Webfonts/fonts/woff/YekanBakhFaNum-Regular.woff")
+      format("woff"),
+    url("../public/fonts/Yekan-Bakh-FaNum/Webfonts/fonts/woff2/YekanBakhFaNum-Regular.woff2")
+      format("woff2"),
+    url("../public/fonts/Yekan-Bakh-FaNum/TTF/YekanBakhFaNum-Regular.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: YekanBold;
+  src: url("../public/fonts/Yekan-Bakh-FaNum/OTF/YekanBakhFaNum-Bold.otf");
+  src: url("../public/fonts/Yekan-Bakh-FaNum/Webfonts/fonts/woff/YekanBakhFaNum-Bold.woff")
+      format("woff"),
+    url("../public/fonts/Yekan-Bakh-FaNum/Webfonts/fonts/woff2/YekanBakhFaNum-Bold.woff2")
+      format("woff2"),
+    url("../public/fonts/Yekan-Bakh-FaNum/TTF/YekanBakhFaNum-Bold.ttf")
+      format("truetype");
+}
+
+.yekan {
+  font-family: Yekan;
+}
+.yekanBold {
+  font-family: YekanBold;
+}
+
+
+
 .display-none {
   display: none;
   opacity: 0;
 }
 
 .item {
-  animation: opacity 0.5s linear forwards !important;
+  animation: opacity 0.3s linear forwards !important;
 }
 .leaveItem {
-  animation: reopacity 0.5s linear forwards !important;
+  animation: reopacity 0.3s linear forwards !important;
 }
 .blurTrans {
-  animation: blur 0.3s linear forwards !important;
+  animation: blur 0.2s linear forwards !important;
 }
 .noneBlur {
   animation: resetBlur 0.2s linear forwards !important;
-
 }
 
 @keyframes opacity {
@@ -70,6 +99,10 @@
 }
 .leave {
   transition: width 0.3s ease-in-out !important;
+}
+
+.custom-shadow {
+  box-shadow: 0px 1px 5px -2px gray
 }
 /* :root {
   --foreground-rgb: 0, 0, 0;
