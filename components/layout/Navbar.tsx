@@ -3,6 +3,7 @@
 import { airMotor, angle, turbine } from "@/src/data/subTitles";
 import { subHeader } from "@/src/data/titles";
 import {
+  Accordion,
   ActionIcon,
   Box,
   Burger,
@@ -15,13 +16,13 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import { IconChevronLeft } from "@tabler/icons-react";
 import clsx from "clsx";
+import Link from "next/link";
 import React, { SetStateAction, useEffect, useState } from "react";
 
 const Navbar = ({
   isHidden,
   toggle,
   opened,
-  setIsHidden,
 }: {
   isHidden: boolean;
   toggle: () => void;
@@ -67,7 +68,12 @@ const Navbar = ({
   };
 
   return (
-    <Stack pt={6} align={isHidden ? "center" : "flex-start"} className="drawer w-full">
+    <Stack
+      gap={0}
+      pt={6}
+      align={isHidden ? "center" : "flex-start"}
+      className="drawer w-full"
+    >
       <Box
         // pos="relative"
         // left={5}
@@ -93,75 +99,113 @@ const Navbar = ({
           دسته بندی محصولات
         </h3>
       </Box>
-      <Popover
-      
-        width={200}
-        position="right"
-        withArrow
-        shadow="md"
-        opened={isOpen}
-      >
-        <Popover.Target>
-          <Stack pr={isHidden ? 0 : 10} align={isHidden ? "center" : "normal"} className="w-full">
-            {subHeader.map((i: any) => (
-              <Group
-                // className="w-full"
-                onMouseOver={() => {
-                  handlePop(i.id);
-
-                  // final(i.id);
-                }}
-                // onMouseLeave={() => handleMouse}
-                key={i.id}
-                justify="space-between"
+      {!isMd ? (
+        <>
+          {subHeader.map((i: any) => (
+            <>
+              <Accordion
+                my={i.id > 3 ? 15 : 0}
+                mx={i.id > 3 ? 10 : 0}
+                variant="filled"
+                className="w-full"
               >
-                <Group justify="center">
-                  <Box>{i.icon}</Box>
-                  <Text
-                    className={clsx(
-                      isHidden && "display-none leaveItem",
-                      !isHidden && "item"
-                      // isTablet && "item"
-                    )}
-                  >
-                    {i.text}
-                  </Text>
-                </Group>
-                <Box
-                  className={clsx(
-                    isHidden && "display-none leaveItem",
-                    !isHidden && "item"
-                    // isTablet && "item"
-                  )}
-                >
-                  <IconChevronLeft
-                    size={20}
-                    color="gray"
-                    style={{ display: `${i.nav}` }}
-                  />
-                </Box>
-              </Group>
-            ))}
-          </Stack>
-        </Popover.Target>
-        <Popover.Dropdown
-          pos="absolute"
-          right={300}
-          onMouseOver={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
-          style={{ transition: "all .3s" }}
-          className="rounded-lg"
-          // style={{ pointerEvents: "none" }}
+                {i.id < 4 ? (
+                  <Accordion.Item key={i.id} value={i.text}>
+                    <Accordion.Control>{i.text}</Accordion.Control>
+                    <Accordion.Panel>
+                      {i.sub.map((i: any) => (
+                        <Stack gap={100} key={i.id + 100}>
+                          <span className="py-1">{i.text}</span>
+                        </Stack>
+                      ))}
+                    </Accordion.Panel>
+                  </Accordion.Item>
+                ) : (
+                  <Link href={i.link}>
+                    <span className="py-5">{i.text}</span>
+                  </Link>
+                )}
+              </Accordion>
+            </>
+          ))}
+        </>
+      ) : (
+        <Popover
+          width={200}
+          position="right"
+          withArrow
+          shadow="md"
+          opened={isOpen}
         >
-          <Stack
-          //  onMouseOver={() => handleMouse(true)} onMouseLeave={() => handlePop(0)}
+          <Popover.Target>
+            <Stack
+              pr={isHidden ? 0 : 10}
+              align={isHidden ? "center" : "normal"}
+              className="w-full"
+            >
+              {subHeader.map((i: any, index) => (
+                <Link href={i.id === 6 ? "/product" : ""} key={index}>
+                  <Group
+                    // className="w-full"
+                    onMouseOver={() => {
+                      handlePop(i.id);
+
+                      // final(i.id);
+                    }}
+                    // onMouseLeave={() => handleMouse}
+                    justify="space-between"
+                  >
+                    <Group justify="center">
+                      <Box>{i.icon}</Box>
+                      <Text
+                        className={clsx(
+                          isHidden && "display-none leaveItem",
+                          !isHidden && "item"
+                          // isTablet && "item"
+                        )}
+                      >
+                        {i.text}
+                      </Text>
+                    </Group>
+                    <Box
+                      className={clsx(
+                        isHidden && "display-none leaveItem",
+                        !isHidden && "item"
+                        // isTablet && "item"
+                      )}
+                    >
+                      <IconChevronLeft
+                        size={20}
+                        color="gray"
+                        style={{ display: `${i.nav}` }}
+                      />
+                    </Box>
+                  </Group>
+                </Link>
+              ))}
+            </Stack>
+          </Popover.Target>
+          <Popover.Dropdown
+            pos="absolute"
+            right={300}
+            onMouseOver={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
+            style={{ transition: "all .3s" }}
+            className="rounded-lg"
+            // style={{ pointerEvents: "none" }}
           >
-            {pop.map((i: any) => (
-              <Text key={i.id}>{i.text}</Text>
-            ))}
-          </Stack>
-        </Popover.Dropdown>
-      </Popover>
+            <Stack
+            //  onMouseOver={() => handleMouse(true)} onMouseLeave={() => handlePop(0)}
+            >
+              {pop.map((i: any) => (
+                <Text key={`${i.id}popupItems-${Math.random() * 100}`}>
+                  {i.text}
+                </Text>
+              ))}
+            </Stack>
+          </Popover.Dropdown>
+        </Popover>
+      )}
     </Stack>
   );
 };

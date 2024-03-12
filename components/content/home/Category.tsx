@@ -14,7 +14,7 @@ const Category = () => {
         </Text>
         <Link href="#">
           <Group gap={3} c="blue">
-            <Text size="sm">مشاهده همه</Text>
+            <Text size="sm"> همه</Text>
             <IconArrowNarrowLeft stroke={1.5} size={20} />
           </Group>
         </Link>
@@ -39,12 +39,12 @@ const Category = () => {
         slidesToScroll={1}
         className="w-full border-t-8 bg-white border-gray-100 pt-5 px-4 flex justify-center items-center rounded-b-lg"
       >
-        {category.map((i) => (
-          <Carousel.Slide key={i.id}>
+        {category.map((i : any) => (
+          <Carousel.Slide key={`${i.id}categoryCrslItems-${Math.random() * 100}`}>
             <Box h={200} w={250} className="bg-white rounded-xl shadow-md">
               <Stack>
                 <div className="absolute top-0 right-0 bg-white rounded-bl-lg px-4 py-2 z-30 shadow-md">
-                  <IconCategory />
+                  <IconCategory stroke={1.5} />
                 </div>
               </Stack>
 

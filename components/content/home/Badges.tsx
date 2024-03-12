@@ -20,7 +20,7 @@ const Badges = ({ isTablet } : { isTablet: boolean | undefined }) => {
               بلبرینگ‌های <br />
               Low-Speed
             </span>
-            <Button>مشاهده جزئیات</Button>
+            <Button variant="light">مشاهده جزئیات</Button>
           </Stack>
           <Box className="box-4 w-24 h-24"></Box>
         </Group>
@@ -31,7 +31,7 @@ const Badges = ({ isTablet } : { isTablet: boolean | undefined }) => {
               High-Speed
             </Text>
 
-            <Button>مشاهده جزئیات</Button>
+            <Button variant="light">مشاهده جزئیات</Button>
           </Stack>
           <Box className="box-5 w-24 h-24"></Box>
         </Group>

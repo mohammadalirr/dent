@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState: UserSliceState = {
   tkn: "",
@@ -18,6 +19,10 @@ export const userSlice = createSlice({
     },
     setUserData: (state, action: PayloadAction<any>) => {
       state.userData = action.payload;
+      toast.success(`! خوش آمدی ${state.userData.name} `, {
+        position: "top-right"
+      })
+
     },
     setAuthStatus: (state, action: PayloadAction<boolean>) => {
       state.isAuth = action.payload

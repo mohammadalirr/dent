@@ -68,8 +68,10 @@ const SubHeader = () => {
               <Text>دسته بندی محصولات</Text>
             </Group> */}
 
-            {subHeader.map((item) => (
-              <Group gap={5} key={item.id}>
+            {subHeader.map((item : any) => (
+              <Group gap={5} 
+              key={`${item.id}subHeader-${Math.random() * 100}`}
+              >
                 {item.icon}
                 <Text size="sm">{item.text}</Text>
               </Group>

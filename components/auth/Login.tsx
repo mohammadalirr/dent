@@ -61,6 +61,10 @@ const Login = () => {
         null;
         break;
     }
+
+    // if (isSuccess === true) {
+    //   setSkip(true);
+    // }
   }, [status]);
 
   const handleClose = () => {
@@ -86,8 +90,8 @@ const Login = () => {
   const form = useForm<{ un: string; pw: string }>({
     validateInputOnBlur: true,
     initialValues: {
-      un: "mm.ray",
-      pw: "zRNrHoEKjBMwV*1j2xHL)ahq",
+      un: "mm.ray2",
+      pw: "ekjG2SS)WH8HVVdKGOkCmAdt",
     },
     validate: {
       un: (value) =>
@@ -154,6 +158,7 @@ const Login = () => {
           </Stack>
           <Stack>
             <Button
+            variant="light"
               color={isSuccess ? "green" : "blue"}
               loading={isLoading}
               type="submit"

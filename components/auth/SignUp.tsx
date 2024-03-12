@@ -192,6 +192,7 @@ const SignUp = () => {
           </Stack>
           <Stack>
             <Button
+            variant="light"
               color={isSuccess ? "green" : "blue"}
               loading={isLoading}
               type="submit"

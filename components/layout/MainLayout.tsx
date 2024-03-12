@@ -1,7 +1,12 @@
 "use client";
 
-import { AppShell, em, rem } from "@mantine/core";
-import { useClickOutside, useDisclosure, useHeadroom, useMediaQuery } from "@mantine/hooks";
+import { AppShell, Box, Stack, em, rem } from "@mantine/core";
+import {
+  useClickOutside,
+  useDisclosure,
+  useHeadroom,
+  useMediaQuery,
+} from "@mantine/hooks";
 // import Header from "./Header";
 
 import dynamic from "next/dynamic";
@@ -12,6 +17,9 @@ import { relative } from "path";
 
 // const Header = dynamic(() => import("./Header"), { ssr: false });
 import Header from "./header/Header";
+import { ToastContainer } from "react-toastify";
+import Auth from "../auth/Auth";
+import Footer from "./Footer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure();
@@ -20,7 +28,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const isTablet = useMediaQuery(`(max-width: ${em(992)})`);
   const [isHidden, setIsHidden] = useState<boolean>(true);
 
-  const ref = useClickOutside(() => isHidden === false ? setIsHidden(true) : null);
+  const ref = useClickOutside(() =>
+    isHidden === false ? setIsHidden(true) : null
+  );
 
   useEffect(() => {
     if (isTablet) {
@@ -47,6 +57,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             md: isHidden ? 60 : 300,
             lg: isHidden ? 60 : 300,
           },
+
           breakpoint: "md",
           collapsed: { mobile: !opened },
         }}
@@ -67,7 +78,6 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
         {isTablet ? (
           <AppShell.Navbar
-          
             style={{ boxShadow: "-3px 0px 10px -8px gray" }}
             px={10}
             py={20}
@@ -81,7 +91,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
           </AppShell.Navbar>
         ) : (
           <AppShell.Navbar
-          ref={ref}
+            ref={ref}
             onMouseLeave={() => mouseOn(true)}
             onMouseOver={() => mouseOn(false)}
             className={!isHidden ? "animate" : "leave"}
@@ -107,12 +117,27 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             !isHidden && !isTablet && "blurTrans",
             isHidden && "noneBlur"
           )}
-          pt={isTablet ? 0 : 115  }
-          pl={!isTablet ? 30 : 0}
-          pr={!isTablet ? 90 : 0}
-  
+          pb={0}
         >
-          {children}
+          <Stack gap={300} justify="space-between">
+            <Box
+              // pt={isTablet ? 35 : 115}
+              pt={{ sm: 35, md: 115 }}
+              // pl={!isTablet ? 30 : 0}
+              pl={{ sm: 0, md: 30 }}
+              pr={{ sm: 0, md: 90 }}
+              // pr={!isTablet ? 90 : 0}
+            >
+              <ToastContainer />
+              <Auth />
+              {children}
+            </Box>
+            <Box
+            // pl={!isTablet ? 0 : 0} pr={!isTablet ? 560 : 0}
+            >
+              <Footer />
+            </Box>
+          </Stack>
         </AppShell.Main>
       </AppShell>
     </>

@@ -2,7 +2,7 @@ export const products = [
     {
         id: 1,
         name: "درب پوش باتن",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/49f1c59b-095d-47a6-b72c-92bc6740a37c/tpc18-outdoor-gallery-1693450-12040196_03_3x2.jpg",
         disc: 20,
         spec: false,
         aval: true,
@@ -13,7 +13,7 @@ export const products = [
       {
         id: 2,
         name: "کارتریج اندو لیفت",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/cda6eab8-3814-44b8-8b0c-5f9c55f84e0f/tpc18-outdoor-gallery-436041-12037328_07_4x3.jpg",
         disc: 0,
         spec: false,
         aval: false,
@@ -24,7 +24,7 @@ export const products = [
     {
         id: 3,
         name: "هد ناخنکی",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/6359beda-6406-4bff-a595-6edc3f91a7f2/tpc18-outdoor-gallery-261757-11967214_09_3x2.jpg",
         disc: 60,
         spec: true,
         aval: true,
@@ -35,7 +35,7 @@ export const products = [
     {
         id: 4,
         name: "درب پوش باتن",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/37d5f355-9334-4ebf-b63e-e8f5690f6c77/tpc18-outdoor-gallery-444219-10000436_10_3x2.jpg",//img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
         disc: 20,
         spec: false,
         aval: true,
@@ -46,7 +46,7 @@ export const products = [
       {
         id: 5,
         name: "کارتریج اندو لیفت",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/5b7c32fc-c08c-4a01-989c-be1ce4e853bb/tpc18-outdoor-gallery-499335-11707281_11_3x2.jpg",
         disc: 0,
         spec: false,
         aval: false,
@@ -57,7 +57,7 @@ export const products = [
     {
         id: 6,
         name: "هد ناخنکی",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/6cd9ae16-0520-47a7-934c-44f7d2473182/tpc18-outdoor-gallery-1697638-12049450_14_square.jpg",
         disc: 60,
         spec: true,
         aval: true,
@@ -68,7 +68,7 @@ export const products = [
     {
         id: 7,
         name: "درب پوش باتن",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/4f659b8a-2e01-4e1a-8a24-328d7555df32/tpc18-outdoor-gallery-512802-10874090_16_3x2.jpg.jpg",
         disc: 20,
         spec: false,
         aval: true,
@@ -79,7 +79,7 @@ export const products = [
       {
         id: 8,
         name: "کارتریج اندو لیفت",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/19368c24-700b-4705-a988-3b6173d1efe0/tpc18-outdoor-gallery-1210917-11876708_25_3x2.jpg",
         disc: 0,
         spec: false,
         aval: false,
@@ -90,7 +90,7 @@ export const products = [
     {
         id: 9,
         name: "هد ناخنکی",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/c2de11f7-33cb-4b36-8257-714397f639c2/tpc18-outdoor-gallery-1512900-12012146_24_3x2.jpg",
         disc: 60,
         spec: true,
         aval: true,
@@ -101,7 +101,7 @@ export const products = [
     {
         id: 10,
         name: "درب پوش باتن",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/0eda5c77-0bea-49b6-a846-2894eb93a91a/tpc18-outdoor-gallery-1662792-12040847_22_3x2.jpg",
         disc: 20,
         spec: false,
         aval: true,
@@ -112,7 +112,7 @@ export const products = [
       {
         id: 11,
         name: "کارتریج اندو لیفت",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/ae8892de-08d0-4f8e-ad99-448183c8dfbe/tpc18-outdoor-gallery-1689465-11974253_18_3x2.jpg",
         disc: 0,
         spec: false,
         aval: false,
@@ -123,7 +123,7 @@ export const products = [
     {
         id: 12,
         name: "هد ناخنکی",
-        img: "https://img.freepik.com/premium-vector/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.jpg",
+        img: "https://i.natgeofe.com/n/9964c603-567a-4fd8-9a92-42a173f62162/tpc18-outdoor-gallery-1691685-11992122_17_3x2.jpg",
         disc: 60,
         spec: true,
         aval: true,

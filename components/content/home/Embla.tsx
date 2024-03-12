@@ -24,13 +24,14 @@ const Embla = () => {
         slideGap="md"
         loop        
         slidesToScroll={1}
+        containScroll="trimSnaps"
       >
         <Carousel.Slide>
           <Box className="box-1 w-full h-full flex flex-col items-end justify-start px-5 py-5">
             <Text>
                 آنگل
             </Text>
-            <Button>
+            <Button variant="light">
             همین حالا تهیه کنید
             </Button>
           </Box>
@@ -40,7 +41,7 @@ const Embla = () => {
           <Text>
                 توربین
             </Text>
-            <Button>
+            <Button variant="light">
              همین حالا تهیه کنید
             </Button>
 
@@ -51,7 +52,7 @@ const Embla = () => {
           <Text>
                 ایرموتور
             </Text>
-            <Button>
+            <Button variant="light">
                 همین حالا تهیه کنید
             </Button>
 

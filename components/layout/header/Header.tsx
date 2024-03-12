@@ -6,6 +6,7 @@ import {
   Burger,
   Button,
   Group,
+  NumberFormatter,
   Popover,
   Stack,
   Text,
@@ -26,6 +27,7 @@ import { layoutSlice, useDispatch } from "@/lib/redux";
 import { userSlice } from "@/lib/redux/slices/userSlice/userSlice";
 import { selectStatus } from "@/lib/redux/slices/userSlice/selectors";
 import User from "./User";
+import Link from "next/link";
 
 const Header = ({
   toggle,
@@ -99,6 +101,7 @@ const Header = ({
           ></div>
 
           <Group
+          visibleFrom="sm"
             gap={0}
             className={clsx(
               "transition-all",
@@ -112,16 +115,19 @@ const Header = ({
               color={
                 // focused ?
                 //  "blue" :
-                  "gray"}
+                "gray"
+              }
               size={43}
               variant={
                 // focused ?
                 //  "filled":
-                  "subtle"}
+                "subtle"
+              }
               c={
                 // focused ?
                 //  "white" :
-                  "black"}
+                "black"
+              }
               onClick={() => {
                 setFocused(true);
                 handleFocus();
@@ -144,10 +150,12 @@ const Header = ({
             />
           </Group>
         </Group>
-        <Group className="transition-all" gap={5}>
-          {/* <Text size="lg">Parts Dental</Text> */}
-          <IconDental stroke={1.5} size={50} />
-        </Group>
+        <Link href="/">
+          <Group visibleFrom="xs" className="transition-all" gap={5}>
+            {/* <Text size="lg">Parts Dental</Text> */}
+            <IconDental stroke={1.5} size={50} />
+          </Group>
+        </Link>
         {/* </Group> */}
         {/* <Box className="w-4/12" visibleFrom="md">
           <SearchBox />
@@ -193,34 +201,40 @@ const Header = ({
                     {qty}
                   </span>
                 ) : null}
-                <ActionIcon
-                  pos="relative"
-                  style={{ top: 2 }}
-                  p={5}
-                  radius={999}
-                  color="gray"
-                  size={43}
-                  variant="subtle"
-                  c="black"
-                >
-                  <IconShoppingCart stroke={1} size={30} />
-                </ActionIcon>
+                <Link href="/cart">
+                  <ActionIcon
+                    pos="relative"
+                    style={{ top: 2 }}
+                    p={5}
+                    radius={999}
+                    color="gray"
+                    size={43}
+                    variant="subtle"
+                    c="black"
+                  >
+                    <IconShoppingCart stroke={1} size={30} />
+                  </ActionIcon>
+                </Link>
               </div>
             </Popover.Target>
-            <Popover.Dropdown
-              ref={popRef}
-              onMouseDown={close}
-              onMouseLeave={close}
-              onMouseOutCapture={close}
-            >
-              <Stack>
-                <Group align="center" justify="space-between">
-                  <Text className="yekan" size="xs" c="gray">
-                    {price > 0 ? `${price} تومان` : null}
-                  </Text>
-                </Group>
-              </Stack>
-            </Popover.Dropdown>
+            {price > 0 && (
+              <Popover.Dropdown
+                ref={popRef}
+                onMouseDown={close}
+                onMouseLeave={close}
+                onMouseOutCapture={close}
+              >
+                <Stack>
+                  <Group align="center" justify="space-between">
+                    <Text className="yekan" size="xs" c="gray">
+                      <NumberFormatter value={price} thousandSeparator />
+                      {"  "}
+                      تومان
+                    </Text>
+                  </Group>
+                </Stack>
+              </Popover.Dropdown>
+            )}
           </Popover>
           <User />
         </Group>
